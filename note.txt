@@ -1,0 +1,22 @@
+server/
+├── Data/
+│   ├── asl_alphabet_test/     # Test dataset for ASL alphabet images
+│   ├── asl_alphabet_train/    # Training dataset for ASL alphabet images
+├── ml_model/
+│   ├── model.py               # Model training and evaluation script
+│   ├── trained_model.h5       # Trained ML model for ASL recognition
+│   ├── preprocessing.py       # Data preprocessing and augmentation logic
+├── api/
+│   ├── app.py                 # Flask/Django FastAPI app for managing API endpoints
+│   ├── routes/
+│   │   ├── recognition.py     # API route for processing hand movements and returning translations
+│   │   ├── user.py            # User authentication (optional, if needed)
+├── static/
+│   ├── uploads/               # Directory for uploaded video/image files
+│   ├── processed/             # Directory for processed data or outputs
+├── utils/
+│   ├── webcam_feed.py         # Script for real-time webcam video capture
+│   ├── sign_mapping.json      # JSON file mapping ASL signs to English words/phrases
+├── requirements.txt           # Python dependencies
+├── main.py                    # Entry point to start the backend server
+└── README.md                  # Project documentation
