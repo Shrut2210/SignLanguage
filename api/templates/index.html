@@ -3,14 +3,112 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Sign Language Recognition</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <style>
+            body {
+                margin: 0;
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background: #000; /* Fallback background color */
+            }
+            
+            .main {
+                position: relative;
+                height: 100vh;
+                width: 100vw;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .background {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+            }
+            
+            .background img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            
+            .background::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: black;
+                opacity: 0.9;
+                z-index: 2;
+            }
+            
+            .content {
+                position: relative;
+                z-index: 3;
+                text-align: center;
+                color: white;
+                padding: 20px;
+            }
+            
+            .content h1 {
+                font-size: 3em;
+                margin-bottom: 20px;
+            }
+            
+            .content p {
+                font-size: 1.2em;
+                line-height: 1.5;
+            }
+
+            button {
+                position: relative;
+                z-index: 3;
+                background-color: #3498db;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                font-size: 1em;
+                margin-top: 20px;
+                text-decoration: none;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                border-radius: 5px;
+            }
+
+            button:hover {
+                background-color: #2980b9;
+            }
+        </style>
     </head>
     <body>
-        <h1>
-            Welcome to the Sign Language Recognition Web Application!
-        </h1>
+        <div class="main">
+            <div class="background">
+                <img src="https://wallpapercave.com/wp/wp6944863.jpg" alt="Background Image">
+            </div>
+            <div class="content">
+                <h1>Welcome to the Sign Language Recognition Web Application!</h1>
+                <p>This web application is designed to recognize and translate sign language gestures (mostly alphabets).</p>
+                <button onclick="navigateToDashboard()">Explore</button>
+            </div>
+        </div>
+
+        <script>
+            function navigateToDashboard() {
+                window.location.href = "/dashboard";
+            }
+        </script>
     </body>
 </html>
